@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Interface</title>
+    
+    <!-- 1. Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Load Inter font (common in minimalist UIs) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- 3. Link to the external CSS file -->
+    <link rel="stylesheet" href="/DESGINE/style.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <!-- Main Chat Container -->
+    <div class="bg-white w-full max-w-2xl h-[80vh] flex flex-col rounded-lg shadow-lg border border-gray-200">
+        
+        <!-- Header -->
+        <div class="p-4 border-b border-gray-200">
+            <h1 class="text-lg font-semibold text-gray-800">AI Chat Bot</h1>
+            <p class="text-sm text-gray-500">Connected to <span class="font-medium text-green-600">phi3:mini</span></p>
+        </div>
+
+        <!-- Chat History Area -->
+        <div id="chat-history" class="flex-1 p-6 space-y-4 overflow-y-auto">
+            <!-- Messages will be dynamically added here -->
+            <div class="flex">
+                <div class="bg-gray-100 text-gray-800 p-3 rounded-r-lg rounded-bl-lg max-w-xs md:max-w-md">
+                    <p>Hello! Send me a prompt to get started.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Input Area -->
+        <form id="message-form" class="p-4 border-t border-gray-200 flex items-center space-x-3">
+            <input 
+                type="text" 
+                id="message-input" 
+                placeholder="Type your message..." 
+                autocomplete="off"
+                class="flex-1 w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+            >
+            <button 
+                type="submit" 
+                id="send-button"
+                class="bg-blue-600 text-white p-2 rounded-lg h-10 w-10 flex items-center justify-center hover:bg-blue-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+                <!-- Send Icon (SVG) -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                    <path d="M3.105 3.105a.75.75 0 01.07.02l12.723 4.543a.75.75 0 010 1.344L3.174 13.55a.75.75 0 01-1.002-1.07l.802-2.404a.75.75 0 00-.31-1.01l-2.003-1.42a.75.75 0 01.121-1.34l2.003-1.42a.75.75 0 00.31-1.01l-.802-2.404a.75.75 0 01.932-1.092zM14.6 9.25a.75.75 0 000 1.5h2.65l-2.094 2.094a.75.75 0 001.06 1.06L19 11.31v2.65a.75.75 0 001.5 0v-3.5a.75.75 0 00-.75-.75h-3.5a.75.75 0 000 1.5h2.64l-2.094-2.094a.75.75 0 00-1.06 1.06L16.94 9.25H14.6z" />
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <!-- 4. Link to the external JS file -->
+    <!-- 'defer' ensures the script runs after the HTML is parsed -->
+    <script src="/LOGIC/script.js" defer></script>
+</body>
+</html>
